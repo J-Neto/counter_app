@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
       
       appBar: AppBar(
         
-        title: const Text("Meu Primeiro App"),
+        title: const Text("Meu Primeiro App - Contador"),
       ),
       
       body: Center(
