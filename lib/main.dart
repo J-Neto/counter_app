@@ -5,28 +5,37 @@ import "package:flutter/material.dart";
 
 void main() {
   runApp(MaterialApp(
-    theme: ThemeData(
-      primarySwatch: Colors.purple
-    ),
-    
-    home: HomePage()
-  ));
+      theme: ThemeData(primarySwatch: Colors.deepPurple), home: HomePage()));
 }
 
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
 
-class HomePage extends StatelessWidget {
+class _HomePageState extends State<HomePage> {
+  int count = 0;
+
+  void increment() {
+    count++;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       
       appBar: AppBar(
+        
         title: const Text("Meu Primeiro App"),
       ),
       
-      body: const Center(
-      
+      body: Center(
+        
         child: Text(
-          "Contador\n0", 
+          
+          "Contador\n$count",
+        
           textAlign: TextAlign.center,
         )
       ),
@@ -35,9 +44,10 @@ class HomePage extends StatelessWidget {
         
         child: const Icon(Icons.add),
         
-        onPressed: () {},
+        onPressed: () {
+          increment();
+        },
       ),
     );
   }
-  
 }
